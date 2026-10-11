@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shaun Khalira | Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Shaun Khalira, a web developer building responsive websites and Java applications.">
+    <meta name="theme-color" content="#274245">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23274245'/%3E%3Ctext x='32' y='43' font-size='30' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%23dfd6ae'%3ESK%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add("js");
+            try {
+                var saved = JSON.parse(localStorage.getItem("portfolioTheme") || "null");
+                if (saved && saved.palette) {
+                    var map = { background: "bg", surface: "surface", accent: "accent", text: "text", muted: "muted", border: "border" };
+                    Object.keys(map).forEach(function (key) {
+                        if (/^#[0-9a-f]{6}$/i.test(saved.palette[key])) {
+                            root.style.setProperty("--theme-" + map[key], saved.palette[key]);
+                        }
+                    });
+                }
+            } catch (e) { /* storage unavailable: keep the default theme */ }
+            // Safety net: if index.js never loads, don't leave content hidden.
+            setTimeout(function () {
+                if (!window.__portfolioReady) { root.classList.remove("js"); }
+            }, 4000);
+        })();
+    </script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="brand" href="#home">Portfolio</a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- ================= HOME ================= -->
+        <section id="home" class="landing">
+            <div class="hero-grid">
+
+                <div class="hero-info">
+                    <p class="hero-greeting" data-reveal>Hey, <span class="accent">Shaun on deck</span></p>
+                    <h1 data-reveal>Web Developer</h1>
+                    <p class="hero-lead" data-reveal>
+                        I build responsive websites and Java applications, and I'm always learning
+                        something new. Take a look at what I've made so far.
+                    </p>
+                    <!-- Point href at your real CV file -->
+                    <a class="btn" href="cv.pdf" download data-reveal>Download CV</a>
+                    <hr class="hero-rule" data-reveal="line">
+                </div>
+
+                <div class="hero-portrait">
+                    <!-- Replace this placeholder with: <img src="images/portrait.jpg" alt="Portrait of Shaun Khalira" width="280" height="240"> -->
+                    <div class="portrait-frame" role="img" aria-label="Portrait placeholder" data-reveal="mask">
+                        <span aria-hidden="true">SK</span>
+                    </div>
+                </div>
+
+                <div class="hero-bar" aria-hidden="true" data-reveal="line"></div>
+
+                <div class="hero-themes" data-reveal>
+                    <p class="themes-label" id="theme-label">Pick a colour theme</p>
+                    <div class="theme-carousel" role="group" aria-roledescription="carousel" aria-labelledby="theme-label">
+                        <button class="theme-nav prev" id="themePrev" type="button" aria-label="Previous themes">&#10094;</button>
+
+                        <div class="cards" id="themeTrack">
+                            <button class="cad" type="button" aria-pressed="false" aria-label="Theme 1"><img src="images/1.jpg" alt="" width="120" height="120"></button>
+                            <button class="cad" type="button" aria-pressed="false" aria-label="Theme 2"><img src="images/2.png" alt="" width="120" height="120"></button>
+                            <button class="cad" type="button" aria-pressed="false" aria-label="Theme 3"><img src="images/3.png" alt="" width="120" height="120"></button>
+                            <button class="cad" type="button" aria-pressed="false" aria-label="Theme 4"><img src="images/4.jpg" alt="" width="120" height="120"></button>
+                        </div>
+
+                        <button class="theme-nav next" id="themeNext" type="button" aria-label="Next themes">&#10095;</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+        <section class="project section" id="projects" aria-labelledby="projects-title">
+            <div class="container">
+
+                <div class="m1" data-reveal>
+                    <h2 id="projects-title">Projects</h2>
+                    <p>The art of learning</p>
+                </div>
+
+                <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Projects" data-reveal>
+
+                    <button class="carousel-btn prev" id="prevBtn" type="button" aria-label="Previous project">&#10094;</button>
+
+                    <div class="carousel-viewport">
+                        <div class="carousel-track" id="carouselTrack">
+
+                            <article class="p-child">
+                                <div class="project-image">
+                                    <img src="images/5.jpg" alt="Screenshot of the Validation System" width="600" height="360" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="project-tag">Java &bull; Swing</span>
+                                    <h3>Validation System</h3>
+                                    <p>
+                                        A Java Swing application designed to validate user information
+                                        and ensure that all entered details meet the required conditions.
+                                    </p>
+                                    <div class="project-link">
+                                        <a href="validation-system.html">Preview project <span class="sr-only">: Validation System</span><span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="p-child">
+                                <div class="project-image">
+                                    <img src="images/9.jpg" alt="Screenshot of the Banking System" width="600" height="360" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="project-tag">Java &bull; Banking</span>
+                                    <h3>Banking System</h3>
+                                    <p>
+                                        A banking application that allows users to manage accounts,
+                                        perform transactions, and access banking services through a
+                                        simple interface.
+                                    </p>
+                                    <div class="project-link">
+                                        <a href="banking-system.html">Preview project <span class="sr-only">: Banking System</span><span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="p-child">
+                                <div class="project-image">
+                                    <img src="images/7.jpg" alt="Preview of the Creative Project" width="600" height="360" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="project-tag">Portfolio &bull; Design</span>
+                                    <h3>Creative Project</h3>
+                                    <p>
+                                        An additional project demonstrating my approach to planning,
+                                        visual design, and building useful digital experiences.
+                                    </p>
+                                    <div class="project-link">
+                                        <a href="projects.html">Preview project <span class="sr-only">: Creative Project</span><span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="p-child">
+                                <div class="project-image">
+                                    <img src="images/8.jpg" alt="Preview of the web projects collection" width="600" height="360" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="project-tag">HTML &bull; CSS &bull; JavaScript</span>
+                                    <h3>Web Projects</h3>
+                                    <p>
+                                        A collection of web development projects showcasing responsive
+                                        layouts, creative designs, and interactive website features.
+                                    </p>
+                                    <div class="project-link">
+                                        <a href="projects.html">Preview project <span class="sr-only">: Web Projects</span><span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next" id="nextBtn" type="button" aria-label="Next project">&#10095;</button>
+
+                    <p class="carousel-status" id="carouselStatus" aria-live="polite"></p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="skill section" aria-labelledby="skills-title">
+            <div class="container">
+
+                <div class="skill-heading" data-reveal>
+                    <h2 id="skills-title">Skills<span class="accent">.</span></h2>
+                    <p>
+                        Technologies, tools and practices I use to turn ideas
+                        into functional digital experiences.
+                    </p>
+                </div>
+
+                <div class="skill-grid">
+
+                    <article class="skill-card backend" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">01 / DEVELOPMENT</span>
+                            <span class="card-icon" aria-hidden="true">&lt;/&gt;</span>
+                        </div>
+                        <h3>Languages &amp; Backend</h3>
+                        <p class="card-description">Building application logic and working with programming fundamentals.</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <h4>Java</h4>
+                                <p>Swing, OOP, DAO pattern</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>C++</h4>
+                                <p>Procedural programming &amp; introductory OOP</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>Spring Boot / Servlets</h4>
+                                <p>Applied in student portal development</p>
+                            </div>
+                        </div>
+                        <span class="card-decoration" aria-hidden="true">&lt;/&gt;</span>
+                    </article>
+
+                    <article class="skill-card frontend" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">02 / WEB</span>
+                            <span class="card-icon" aria-hidden="true">&lt;/&gt;</span>
+                        </div>
+                        <h3>Frontend &amp; Web</h3>
+                        <p class="card-description">Creating structured, responsive and interactive web experiences.</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <h4>HTML5</h4>
+                                <p>Semantic structure</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>CSS3</h4>
+                                <p>Responsive layouts and styling</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>JavaScript</h4>
+                                <p>DOM manipulation and interactivity</p>
+                            </div>
+                        </div>
+                        <span class="card-decoration" aria-hidden="true">HTML / CSS / JS</span>
+                    </article>
+
+                    <article class="skill-card tools" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">03 / TOOLKIT</span>
+                            <span class="card-icon" aria-hidden="true">&#9881;</span>
+                        </div>
+                        <h3>Tools &amp; Practice</h3>
+                        <p class="card-description">Tools and workflows that support my development process.</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <h4>Git &amp; GitHub</h4>
+                                <p>Feature-branch workflow</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>IntelliJ IDEA</h4>
+                                <p>Primary Java IDE</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>NetBeans</h4>
+                                <p>Java Swing application development</p>
+                            </div>
+                        </div>
+                        <span class="card-decoration" aria-hidden="true">TOOLS &amp; WORKFLOW</span>
+                    </article>
+
+                    <article class="skill-card database" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">04 / DATA</span>
+                            <span class="card-icon" aria-hidden="true">&#9638;</span>
+                        </div>
+                        <h3>Database Development</h3>
+                        <p class="card-description">Organising information and developing structured database solutions.</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <h4>SQL / MySQL</h4>
+                                <p>Schema design and queries</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>Data modelling</h4>
+                                <p>Structuring application data</p>
+                            </div>
+                        </div>
+                        <span class="card-decoration" aria-hidden="true">STRUCTURE / QUERY</span>
+                    </article>
+
+                    <article class="skill-card workflow" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">05 / PROCESS</span>
+                            <span class="card-icon" aria-hidden="true">&#8599;</span>
+                        </div>
+                        <h3>Development Workflow</h3>
+                        <p class="card-description">Approaching development through planning, iteration and collaborative work.</p>
+                        <ol class="workflow-points">
+                            <li class="workflow-point"><span>01</span><p>Plan and structure</p></li>
+                            <li class="workflow-point"><span>02</span><p>Develop and test</p></li>
+                            <li class="workflow-point"><span>03</span><p>Improve and refine</p></li>
+                        </ol>
+                        <span class="card-decoration" aria-hidden="true">BUILD / TEST / IMPROVE</span>
+                    </article>
+
+                    <article class="skill-card analysis" data-reveal>
+                        <div class="card-top">
+                            <span class="card-number">06 / PLANNING</span>
+                            <span class="card-icon" aria-hidden="true">&#8984;</span>
+                        </div>
+                        <h3>Systems Analysis &amp; Design</h3>
+                        <p class="card-description">Translating requirements into structured systems and practical solutions.</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <h4>Systems analysis</h4>
+                                <p>Requirements to structure</p>
+                            </div>
+                            <div class="skill-item">
+                                <h4>Project management</h4>
+                                <p>Coursework and team delivery</p>
+                            </div>
+                        </div>
+                        <span class="card-decoration" aria-hidden="true">PLAN WITH PURPOSE</span>
+                    </article>
+
+                </div>
+
+                <div class="skill-footer" aria-hidden="true">
+                    <span data-reveal="line"></span>
+                    <p data-reveal="fade">Always learning. Always building.</p>
+                    <span data-reveal="line"></span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="me section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="me-grid">
+
+                    <div class="me-heading" data-reveal>
+                        <h2 id="about-title">About me</h2>
+                    </div>
+
+                    <div class="me-item item-one" data-reveal="right">
+                        <span class="me-number">01</span>
+                        <h3>Who I am</h3>
+                        <p>I'm a creative developer passionate about turning ideas into meaningful digital experiences.</p>
+                    </div>
+
+                    <div class="me-item item-two" data-reveal="left">
+                        <span class="me-number">02</span>
+                        <h3>My journey</h3>
+                        <p>I've been exploring design and development, learning new technologies and building creative projects along the way.</p>
+                    </div>
+
+                    <div class="me-image" data-reveal="mask">
+                        <img src="images/about-me.jpg" alt="Portrait of Shaun Khalira" width="700" height="800" loading="lazy">
+                    </div>
+
+                    <div class="me-item item-three" data-reveal="right">
+                        <span class="me-number">03</span>
+                        <h3>My approach</h3>
+                        <p>I believe great digital experiences come from balancing creativity, functionality and attention to detail.</p>
+
+                        <a href="#contact" class="me-button">
+                            <span class="arrow-circle" aria-hidden="true">&rarr;</span>
+                            <span class="button-text">Get in touch</span>
+                        </a>
+                    </div>
+
+                    <div class="me-item item-four" data-reveal="left">
+                        <span class="me-number">04</span>
+                        <h3>What I do</h3>
+                        <p>I create websites, design user interfaces and develop digital solutions for businesses and individuals.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= CONTACT ================= -->
+    <footer id="contact" class="contact">
+
+        <div class="foot">
+
+            <nav class="act1" aria-label="Footer" data-reveal>
+                <p class="footer-title">Explore</p>
+                <ul>
+                    <li><a href="#home">Home <span aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="#projects">Projects <span aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="#skills">Skills <span aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="#about">About me <span aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="#contact">Contact <span aria-hidden="true">&#8599;</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="act2" data-reveal>
+                <p class="contact-tag">Have a project in mind?</p>
+
+                <h2>
+                    Don't be a stranger.
+                    <span>Let's talk.</span>
+                </h2>
+
+                <p class="contact-description">
+                    The journey is just beginning. Let's create something meaningful together.
+                </p>
+
+                <a href="mailto:shaunkhalira74@gmail.com" class="contact-cta">
+                    Get in touch <span aria-hidden="true">&#8599;</span>
+                </a>
+
+                <p class="contact-wordmark" aria-hidden="true">Contact<span>.</span></p>
+            </div>
+
+            <div class="act3" data-reveal>
+                <p class="footer-title">Find me here</p>
+
+                <div class="contact-row">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:shaunkhalira74@gmail.com">shaunkhalira74@gmail.com <span aria-hidden="true">&#8599;</span></a>
+                </div>
+
+                <div class="contact-row">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/shaun-khalira-2a2879404" target="_blank" rel="noopener noreferrer">
+                        Connect with me <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span>
+                    </a>
+                </div>
+
+                <div class="contact-row">
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/nameless-8-kidd" target="_blank" rel="noopener noreferrer">
+                        Shaun Khalira <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom" data-reveal="fade">
+            <p>&copy; 2026 Shaun Khalira. All rights reserved.</p>
+            <a href="#home">Back to top &uarr;</a>
+        </div>
+
+    </footer>
+
+</body>
+</html>
