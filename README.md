@@ -41,7 +41,7 @@ A personal portfolio website that showcases my background, skills, and projects 
 1. Clone the repository:
 
 ```
-git clone https://github.com/nameless-8-kidd/<(https://github.com/nameless-8-kidd/My-PORTFOLIO)>.git
+git clone https://github.com/nameless-8-kidd/My-PORTFOLIO
 ```
 
 2. Open the folder and open `index.html` directly in your browser — no build step or server required.
