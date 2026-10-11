@@ -36,23 +36,15 @@ A personal portfolio website that showcases my background, skills, and projects 
 * Fonts sourced from Google Fonts (Bricolage Grotesque, Figtree).
 * No other external templates, code snippets, or icon packs were used.
 
-Update the live-site link above once GitHub Pages is enabled.
-
 ## Running locally
 
 1. Clone the repository:
 
 ```
-git clone https://github.com/nameless-8-kidd/<your-repo-name>.git
+git clone https://github.com/nameless-8-kidd/<(https://github.com/nameless-8-kidd/My-PORTFOLIO)>.git
 ```
 
 2. Open the folder and open `index.html` directly in your browser — no build step or server required.
 
    Note: when opened straight from disk, browsers block reading image pixels, so the theme picker switches between four built-in palettes instead of extracting colours from the images. To see the full behaviour, serve the folder instead (for example `python3 -m http.server 8000`) or use the deployed GitHub Pages site.
 
-## Deploying to GitHub Pages
-
-1. Push this project to a public GitHub repository.
-2. Go to Settings → Pages on the repository.
-3. Under "Build and deployment", select the `main` branch and `/ (root)` folder, then save.
-4. Wait a minute for GitHub to publish, then test the live URL in a private/incognito window.
