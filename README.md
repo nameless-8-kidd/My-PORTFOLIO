@@ -2,7 +2,7 @@
 
 A personal portfolio website that showcases my background, skills, and projects as an IT student focused on Java, databases, and web development.
 
-**Live site:** add your GitHub Pages URL here once deployed, e.g. `https://nameless-8-kidd.github.io/portfolio/`
+**Live site:** add your GitHub Pages URL here once deployed, e.g.(https://nameless-8-kidd.github.io/My-PORTFOLIO/)
 
 ## Technologies used
 
